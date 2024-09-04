@@ -1,0 +1,182 @@
+body {
+  background-color: #000000;
+  width: 100vw;
+  margin: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.App header {
+  background-color: #181717;
+  height: 10vh;
+  color: white;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.App section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000000;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  box-sizing: border-box;
+}
+
+main {
+  padding: 10px;
+  flex-grow: 1;
+  height: calc(100vh - 20vh);
+  margin: 10vh 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Message bubbles */
+.message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%; /* Allow message to take full width of the screen */
+}
+
+.sent {
+  justify-content: flex-end;
+  text-align: right;
+  margin-left: auto; /* Push sent message all the way to the right */
+}
+
+.sent p {
+  background: #0b93f6;
+  color: white;
+}
+
+.received {
+  justify-content: flex-start;
+}
+
+.received p {
+  background: #e5e5ea;
+  color: black;
+}
+
+/* Chat bubble styling */
+p {
+  max-width: 60%; /* Chat bubble won't take up the entire screen */
+  margin-bottom: 12px;
+  line-height: 1.5;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+img {
+  width: 30px; /* Small image size */
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Chat input form */
+form {
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  background-color: #181717;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin: auto;
+}
+
+form button {
+  /* width: 10%; */
+  background-color: #38388f;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  border-radius: 50px;
+  align-items: center;
+}
+
+input {
+  line-height: 2;
+  /* width: 60px; */
+  font-size: 1.5rem;
+  background: #3a3a3a;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+/* Button styles */
+button {
+  background-color: #282c34;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  border-radius: 5px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .App header, .form, main {
+    padding: 0 10px;
+  }
+
+  form button {
+    width: 25%;
+  }
+
+  input {
+    width: 75%;
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  p {
+    max-width: 100%;
+    padding: 8px 16px;
+  }
+}
